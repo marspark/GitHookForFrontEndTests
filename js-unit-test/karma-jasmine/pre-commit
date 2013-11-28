@@ -1,0 +1,8 @@
+#!/bin/bash
+
+result=$(karma start --single-run | grep ERROR)
+
+if [ "$result" != '' ]; then
+	echo "Javascript tests do not pass"
+	exit 1
+fi
