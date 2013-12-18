@@ -1,6 +1,8 @@
+PATH=$PATH:/usr/local/bin:/usr/local/sbin
+
 #!/bin/bash
 
-result=$(karma start --single-run | grep ERROR)
+result=$(karma start --single-run | grep FAILED)
 
 if [ "$result" != '' ]; then
 	echo "Javascript tests do not pass"
